@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1091416117767",
+    "project_id": "lingua-app",
+    "storage_bucket": "lingua-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091416117767:android:1f136d3d11d92c555a90a2",
+        "android_client_info": {
+          "package_name": "pl.mateuszmigot.linguaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091416117767-pqub9hhmk6ji9mudi7b371tgal0n50em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1QvQm20TKmYouQlCAVDnnspVuBcUazhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091416117767-pqub9hhmk6ji9mudi7b371tgal0n50em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
