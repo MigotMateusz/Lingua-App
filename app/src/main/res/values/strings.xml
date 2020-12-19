@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Lingua App</string>
+    <string name="logo_image_desc">Lingua App Logo</string>
+    <string name="login">login</string>
+    <string name="password">password</string>
+    <string name="forgot_password_text">Forgot your password?</string>
+    <string name="NewAccountText">Create Account</string>
+    <string name="Sign_up">Sign up</string>
 </resources>
