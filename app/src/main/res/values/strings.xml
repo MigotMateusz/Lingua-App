@@ -12,4 +12,9 @@
     instructions to reset your password.</string>
     <string name="ForgotHeader">Forgot Your Password?</string>
     <string name="HintEmail">Email Address</string>
+    <string name="NewAccount">Create Account</string>
+    <string name="HintLogin">Login</string>
+    <string name="account_question">Already have an account?</string>
+    <string name="success_register">Successful Registration</string>
+    <string name="thank_you_register">Thank you for your registration</string>
 </resources>

@@ -46,8 +46,17 @@
         <item name="android:paddingRight">30dp</item>
     </style>
 
-    <style name="ForogotButtonStyle" parent="Widget.MaterialComponents.Button">
+    <style name="ForgotButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="android:text">@string/reset_password</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">30dp</item>
+    </style>
+
+    <style name="RegisterButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:text">@string/NewAccount</item>
         <item name="android:textSize">16sp</item>
         <item name="android:layout_marginTop">30dp</item>
         <item name="android:textColor">#ffffff</item>
