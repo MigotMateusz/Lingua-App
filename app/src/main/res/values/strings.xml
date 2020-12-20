@@ -6,4 +6,10 @@
     <string name="forgot_password_text">Forgot your password?</string>
     <string name="NewAccountText">Create Account</string>
     <string name="Sign_up">Sign up</string>
+    <string name="go_back_to_login_screen">Go back to login Screen</string>
+    <string name="reset_password">Reset password</string>
+    <string name="ForgotText">Enter your email address and we will send you
+    instructions to reset your password.</string>
+    <string name="ForgotHeader">Forgot Your Password?</string>
+    <string name="HintEmail">Email Address</string>
 </resources>
