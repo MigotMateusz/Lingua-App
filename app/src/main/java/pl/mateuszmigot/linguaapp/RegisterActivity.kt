@@ -1,9 +1,11 @@
 package pl.mateuszmigot.linguaapp
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.button.MaterialButton
@@ -92,6 +94,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser() {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
         val loginField = findViewById<TextInputLayout>(R.id.LoginFieldRegister)
         val emailField = findViewById<TextInputLayout>(R.id.EmailFieldRegister)
         val passwordField = findViewById<TextInputLayout>(R.id.passwordFieldRegister)

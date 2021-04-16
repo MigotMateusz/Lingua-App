@@ -1,7 +1,9 @@
 package pl.mateuszmigot.linguaapp
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -56,6 +58,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
         val loginField = findViewById<TextInputLayout>(R.id.LoginField)
         val passwordField = findViewById<TextInputLayout>(R.id.passwordField)
         val loginInput = findViewById<TextInputEditText>(R.id.LoginInput)

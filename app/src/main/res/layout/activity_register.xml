@@ -8,12 +8,14 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
+
+    <!-- android:scaleX="0.6"
+    android:scaleY="0.6"-->
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
+        android:src="@mipmap/ic_launcher"
+        android:paddingTop="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         />
