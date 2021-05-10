@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    tools:context=".activities.RegisterActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
@@ -31,6 +31,7 @@
         android:id="@+id/LoginFieldRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         style="@style/TextLabelLogin"
         app:startIconContentDescription="@string/HintLogin"
         app:errorEnabled="true">
@@ -39,6 +40,7 @@
             android:id="@+id/LoginInputRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -56,6 +58,7 @@
             android:id="@+id/EmailInputRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             />
 
     </com.google.android.material.textfield.TextInputLayout>

@@ -1,9 +1,10 @@
-package pl.mateuszmigot.linguaapp
+package pl.mateuszmigot.linguaapp.activities
 
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -13,10 +14,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import pl.mateuszmigot.linguaapp.R
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -119,6 +119,9 @@ class RegisterActivity : AppCompatActivity() {
             email == "" -> {
                 emailField.error = "This field cannot be empty!"
             }
+            !isValidEmail(email) -> {
+                loginField.error = "Invalid email address"
+            }
             password == "" -> {
                 passwordField.error = "This field cannot be empty!"
             }
@@ -128,4 +131,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    private fun isValidEmail(email: CharSequence) : Boolean {
+        return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 }

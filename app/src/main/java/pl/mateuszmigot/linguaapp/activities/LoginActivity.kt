@@ -1,8 +1,9 @@
-package pl.mateuszmigot.linguaapp
+package pl.mateuszmigot.linguaapp.activities
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
@@ -11,6 +12,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import pl.mateuszmigot.linguaapp.R
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,8 +29,16 @@ class LoginActivity : AppCompatActivity() {
         val signUpButton = findViewById<Button>(R.id.SignUpButton)
 
         loginButton.setOnClickListener { login() }
-        signUpButton.setOnClickListener { changeActivity(RegisterActivity::class.java, R.anim.pull_in_right, R.anim.pull_out_left) }
-        forgotButton.setOnClickListener { changeActivity(ForgotPasswordActivity::class.java, R.anim.pull_in_left, R.anim.pull_out_right) }
+        signUpButton.setOnClickListener { changeActivity(
+            RegisterActivity::class.java,
+            R.anim.pull_in_right,
+            R.anim.pull_out_left
+        ) }
+        forgotButton.setOnClickListener { changeActivity(
+            ForgotPasswordActivity::class.java,
+            R.anim.pull_in_left,
+            R.anim.pull_out_right
+        ) }
 
     }
 
@@ -49,7 +59,11 @@ class LoginActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
            .addOnCompleteListener(this) { task ->
                if(task.isSuccessful) {
-                    changeActivity(MainActivity::class.java, R.anim.pull_in_right, R.anim.pull_out_left)
+                    changeActivity(
+                        MainActivity::class.java,
+                        R.anim.pull_in_right,
+                        R.anim.pull_out_left
+                    )
                } else {
                    Toast.makeText(baseContext, "Authentication failed.",
                        Toast.LENGTH_SHORT).show()
@@ -72,6 +86,9 @@ class LoginActivity : AppCompatActivity() {
             login == "" -> {
                 loginField.error = "This field cannot be empty"
             }
+            !isValidEmail(login) -> {
+                loginField.error = "Invalid email address"
+            }
             password == "" -> {
                 passwordField.error = "This field cannot be empty"
             }
@@ -79,6 +96,10 @@ class LoginActivity : AppCompatActivity() {
                 signIn(login, password)
             }
         }
+    }
+
+    private fun isValidEmail(email: CharSequence) : Boolean {
+        return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
 }

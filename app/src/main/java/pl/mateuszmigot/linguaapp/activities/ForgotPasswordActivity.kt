@@ -1,4 +1,4 @@
-package pl.mateuszmigot.linguaapp
+package pl.mateuszmigot.linguaapp.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -11,6 +11,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import pl.mateuszmigot.linguaapp.R
 
 class ForgotPasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
