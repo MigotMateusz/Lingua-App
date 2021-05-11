@@ -17,4 +17,5 @@
     <string name="account_question">Already have an account?</string>
     <string name="success_register">Successful Registration</string>
     <string name="thank_you_register">Thank you for your registration</string>
+    <string name="settings">Settings</string>
 </resources>

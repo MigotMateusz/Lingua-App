@@ -9,24 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <uses-library android:name="android.test.runner"
-            android:required="false"/>
+        <activity android:name=".activities.AddDeckActivity"></activity>
+
+        <uses-library
+            android:name="android.test.runner"
+            android:required="false" />
+
         <activity
-            android:windowSoftInputMode="adjustPan"
-            android:name=".activities.ForgotPasswordActivity" />
+            android:name=".activities.ForgotPasswordActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:windowSoftInputMode="adjustPan"
-            android:name=".activities.RegisterActivity" />
+            android:name=".activities.RegisterActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:windowSoftInputMode="adjustPan"
-            android:name=".activities.LoginActivity">
-            <!--<intent-filter>
+            android:name=".activities.LoginActivity"
+            android:windowSoftInputMode="adjustPan">
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
-        <activity android:name=".activities.MainActivity" >
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
