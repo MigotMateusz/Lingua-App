@@ -8,10 +8,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import pl.mateuszmigot.linguaapp.R
 import pl.mateuszmigot.linguaapp.adapters.DeckAdapter
+import pl.mateuszmigot.linguaapp.data.AppDatabase
 import pl.mateuszmigot.linguaapp.viewmodels.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.pack)
         recyclerView.adapter = deckAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

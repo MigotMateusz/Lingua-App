@@ -5,12 +5,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import pl.mateuszmigot.linguaapp.models.Deck
 
-class DataSource(resources: Resources) {
-    private val deckList : List<Deck> = listOf(
-        Deck(name = "Talia 1"),
-        Deck(name = "Talia 2"),
-        Deck(name = "Talia 3")
-    )
+class DataSource {
+    val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "lingua-database").build()
+    val deckDao = db.deckDao()
+    val deckList: List<Deck> = deckDao.getAll()
+    /*private val deckList : List<Deck> = listOf(
+        Deck(name = "Talia 1", percent = 25, cardNumber = 10),
+        Deck(name = "Talia 2", percent = 25, cardNumber = 10),
+        Deck(name = "Talia 3", percent = 25, cardNumber = 10)
+    )*/
     private val deckLiveData = MutableLiveData(deckList)
 
     fun addDeck(deck: Deck) {
@@ -32,7 +35,7 @@ class DataSource(resources: Resources) {
         private var INSTANCE: DataSource? = null
         fun getDataSource(resources: Resources): DataSource {
             return synchronized(DataSource::class) {
-                val newInstance = INSTANCE ?: DataSource(resources)
+                val newInstance = INSTANCE ?: DataSource()
                 INSTANCE = newInstance
                 newInstance
             }
